@@ -3,8 +3,11 @@ import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class Header extends React.Component {
-  renderColumn = column => (
-      <View style={ { width: 55, padding: 2 } }>
+  renderColumn = (column, key) => (
+      <View
+        key={ key }
+        style={ { width: 55, padding: 2 } }
+      >
           <Text>
               { column.label }
           </Text>
@@ -22,8 +25,8 @@ export default class Header extends React.Component {
               } }
             >
                 {
-                  this.props.items.map(column => (
-                    this.renderColumn(column)
+                  this.props.items.map((column, index) => (
+                    this.renderColumn(column, index)
                   ))
                 }
             </View>

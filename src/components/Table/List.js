@@ -12,14 +12,17 @@ export default class List extends React.Component {
       >
           {
             Object.keys(row).map((column, index) => (
-              this.renderColumn(row[column])
+              this.renderColumn(row[column], index)
             ))
           }
       </View>
   )
 
   renderColumn = (column, key) => (
-      <View key={ key } style={ { width: 55, padding: 2 } }>
+      <View
+        key={ key }
+        style={ { width: 55, padding: 2 } }
+      >
           <Text>
               { column }
           </Text>
@@ -32,7 +35,7 @@ export default class List extends React.Component {
           style={ { padding: 5 } }
         >
             {
-              this.props.items.map((row, index) => this.renderRow(row))
+              this.props.items.map((row, index) => this.renderRow(row, index))
             }
         </ScrollView>
     );
