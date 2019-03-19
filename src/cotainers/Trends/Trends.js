@@ -4,6 +4,9 @@ import {
 } from 'react-native-svg-charts';
 import * as shape from 'd3-shape';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
+import PropTypes from 'prop-types';
+
+import Header from '../../components/Header/Header';
 
 export default class Trends extends Component {
   render () {
@@ -13,6 +16,7 @@ export default class Trends extends Component {
 
     return (
         <SafeAreaView style={ { flex: 1, backgroundColor: '#fff', padding: 5 } }>
+            <Header navigation={ this.props.navigation } />
             <View style={ { height: 400, flexDirection: 'row-reverse' } }>
                 <YAxis
                   data={ data1 }
@@ -53,3 +57,9 @@ export default class Trends extends Component {
     );
   }
 }
+
+Trends.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func
+  }).isRequired
+};

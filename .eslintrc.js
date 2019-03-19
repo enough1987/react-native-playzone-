@@ -193,6 +193,7 @@ module.exports = {
       "import/no-duplicates": "error",
       "import/no-named-default": "error",
       "import/no-webpack-loader-syntax": "error",
+      "import/no-extraneous-dependencies": 0,
   
       "promise/param-names": "error",
   
@@ -207,6 +208,7 @@ module.exports = {
       "jest/prefer-to-have-length": "warn",
       "jest/valid-expect": "error",
 
+      "react/destructuring-assignment": 0,
       "react/prefer-stateless-function": 0,
       "react/prefer-es6-class": 0,
       "react/jsx-filename-extension": 0,

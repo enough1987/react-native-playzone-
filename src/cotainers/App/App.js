@@ -29,7 +29,7 @@ const Navigator = createStackNavigator(
     }
   },
   {
-    initialRouteName: 'Trends'
+    initialRouteName: 'Home'
   }
 );
 const AppContainer = createAppContainer(Navigator);
