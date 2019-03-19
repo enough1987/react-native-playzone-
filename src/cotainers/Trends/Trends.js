@@ -5,15 +5,15 @@ import {
 import * as shape from 'd3-shape';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 
-export default class Test extends Component {
+export default class Trends extends Component {
   render () {
     const data1 = [50, 55, 65, 95, 99, 120, 140];
     const data2 = [60, 62, 65, 75, 79, 87, 95];
     const years = [2013, 2014, 2015, 2016, 2017, 2018];
 
     return (
-        <SafeAreaView style={ { flex: 1, backgroundColor: '#fff' } }>
-            <View style={ { height: 200, flexDirection: 'row' } }>
+        <SafeAreaView style={ { flex: 1, backgroundColor: '#fff', padding: 5 } }>
+            <View style={ { height: 400, flexDirection: 'row-reverse' } }>
                 <YAxis
                   data={ data1 }
                   formatLabel={ value => `${value}` }
@@ -22,7 +22,7 @@ export default class Test extends Component {
                     fill: 'grey',
                     fontSize: 10
                   } }
-                  numberOfTicks={ 5 }
+                  numberOfTicks={ 6 }
                 />
                 <LineChart
                   style={ { flex: 1, marginLeft: 16, marginRight: 10 } }
@@ -45,7 +45,7 @@ export default class Test extends Component {
             </View>
             <XAxis
               data={ data1 }
-              formatLabel={ (value, index) => index }
+              formatLabel={ (value, index) => years[index] }
               contentInset={ { left: 30, right: 10 } }
               svg={ { fontSize: 10, fill: 'black' } }
             />
