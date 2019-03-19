@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 export default class Feature extends React.Component {
   render () {
@@ -22,7 +23,11 @@ A query language for APIs and a runtime for
                 </View>
                 <View>
                     <View>
-                        <Text> ICON HERE </Text>
+                        <Icon
+                          name="ios-bug"
+                          color="#ccc"
+                          size={ 25 }
+                        />
                     </View>
                     <View>
                         <Text>D3 and charts</Text>
@@ -44,7 +49,11 @@ A query language for APIs and a runtime for
             <View>
                 <View>
                     <View>
-                        <Text> ICON HERE </Text>
+                        <Icon
+                          name="ios-bug"
+                          color="#ccc"
+                          size={ 25 }
+                        />
                     </View>
                     <View>
                         <Text>.NET Core solution</Text>
@@ -53,7 +62,11 @@ A query language for APIs and a runtime for
                 </View>
                 <View>
                     <View>
-                        <Text> ICON HERE </Text>
+                        <Icon
+                          name="ios-bug"
+                          color="#ccc"
+                          size={ 25 }
+                        />
                     </View>
                     <View>
                         <Text>Microservices</Text>
@@ -66,9 +79,11 @@ An architectural style that structures an application
                 </View>
                 <View>
                     <View>
-                        <Text>
-                            ICON HERE
-                        </Text>
+                        <Icon
+                          name="ios-bug"
+                          color="#ccc"
+                          size={ 25 }
+                        />
                     </View>
                     <View>
                         <Text>Kafka</Text>
