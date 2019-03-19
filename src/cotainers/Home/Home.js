@@ -7,12 +7,16 @@ import Table from '../../components/Table/Table';
 import SearchBox from '../../components/SearchBox/SearchBox';
 
 export default class Home extends Component {
+  updateSearch = (value) => {
+    console.log('--- ', value);
+  }
+
   render () {
     console.log('HOME PAGE');
     return (
         <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
-            <SearchBox update={ value => console.log } />
+            <SearchBox update={ this.updateSearch } />
             <Table />
         </View>
     );

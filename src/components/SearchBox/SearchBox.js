@@ -2,6 +2,8 @@ import React from 'react';
 import { SearchBar } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
+let timeout = null;
+
 export default class SearchBox extends React.Component {
   constructor () {
     super();
@@ -12,7 +14,15 @@ export default class SearchBox extends React.Component {
 
   updateSearch = (search) => {
     this.setState({ search });
-    this.props.update(search);
+    if (!search) {
+      return;
+    }
+    if (timeout) {
+      clearTimeout(timeout);
+    }
+    timeout = setTimeout(() => {
+      this.props.update(search);
+    }, 1000);
   };
 
   render () {
