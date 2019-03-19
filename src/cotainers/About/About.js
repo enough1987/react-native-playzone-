@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from '../../components/Header/Header';
@@ -10,13 +10,13 @@ export default class About extends Component {
   render () {
     console.log('ABOUT PAGE');
     return (
-        <View style={ { flex: 1 } }>
+        <ScrollView style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
-            <View>
+            <View style={ { flex: 1 } }>
                 <Introduction />
                 <Feature />
             </View>
-        </View>
+        </ScrollView>
     );
   }
 }
