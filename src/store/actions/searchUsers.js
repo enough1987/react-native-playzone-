@@ -9,7 +9,7 @@ const headers = {
 export const searchUsers = keyword => (dispatch) => {
   dispatch(isLoadingAction(true, actionTypes.SEARCH_USERS));
 
-  return fetch(`./assets/language`, {
+  return fetch(`/api/github/search/${keyword}`, { // TODO : fix
     method: 'GET',
     mode: 'no-cors',
     headers
