@@ -1,9 +1,19 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
+import PropTypes from 'prop-types';
 
 import Header from './Header';
 import List from './List';
 import data from '../../assets/language';
+
+const headers = [
+  { label: 'name' },
+  { label: 'forks' },
+  { label: 'stars' },
+  { label: 'size' },
+  { label: 'language' },
+  { label: 'desc' }
+];
 
 export default class Table extends React.Component {
   render () {
@@ -15,16 +25,8 @@ export default class Table extends React.Component {
       language: item.language,
       desc: item.description ? `${item.description.slice(0, 10)}...` : null
     }));
-    const headers = [
-      { label: 'name' },
-      { label: 'forks' },
-      { label: 'stars' },
-      { label: 'size' },
-      { label: 'language' },
-      { label: 'desc' }
-    ];
 
-    console.log(' ---- ', items);
+    console.log(' ---- ', items, this.props.data);
 
     return (
         <ScrollView style={ { flex: 1 } }>
@@ -34,3 +36,7 @@ export default class Table extends React.Component {
     );
   }
 }
+
+Table.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object).isRequired
+};

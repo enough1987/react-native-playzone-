@@ -7,7 +7,7 @@ import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Provider } from 'react-redux';
 
-import Home from '../Home/Home';
+import SearchUsers from '../SearchUsers/SearchUsers';
 import Trends from '../Trends/Trends';
 import About from '../About/About';
 import Contacts from '../Contacts/Contacts';
@@ -16,7 +16,7 @@ import store from '../../store/store';
 const Navigator = createStackNavigator(
   {
     Home: {
-      screen: Home
+      screen: SearchUsers
     },
     Trends: {
       screen: Trends

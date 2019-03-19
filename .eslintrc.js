@@ -194,6 +194,7 @@ module.exports = {
       "import/no-named-default": "error",
       "import/no-webpack-loader-syntax": "error",
       "import/no-extraneous-dependencies": 0,
+      "import/no-named-as-default": 0,
   
       "promise/param-names": "error",
   

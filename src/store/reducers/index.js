@@ -1,7 +1,11 @@
 import { combineReducers } from 'redux';
 
-import trendsReducer from './trends';
+import common from './common';
+import trends from './trends';
+import searchUsers from './searchUsers';
 
 export default combineReducers({
-  trands: trendsReducer
+  common,
+  trends,
+  searchUsers
 });
