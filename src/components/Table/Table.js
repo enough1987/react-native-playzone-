@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native';
 
 import Header from './Header';
 import List from './List';
-import data from './data';
+import data from '../../assets/language';
 
 export default class Table extends React.Component {
   render () {
