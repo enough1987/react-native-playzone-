@@ -27,7 +27,7 @@ export default class Table extends React.Component {
     console.log(' ---- ', items);
 
     return (
-        <ScrollView style={ { } }>
+        <ScrollView style={ { flex: 1 } }>
             <Header items={ headers } />
             <List items={ items } />
         </ScrollView>
