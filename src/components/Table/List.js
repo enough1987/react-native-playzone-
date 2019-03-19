@@ -3,18 +3,23 @@ import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class List extends React.Component {
-  renderRow = row => (
-      <View style={ { flex: 1, alignSelf: 'stretch', flexDirection: 'row' } }>
+  renderRow = (row, key) => (
+      <View
+        key={ key }
+        style={ {
+          flex: 1, alignSelf: 'stretch', flexDirection: 'row', padding: 1
+        } }
+      >
           {
-            Object.keys(row).map(column => (
+            Object.keys(row).map((column, index) => (
               this.renderColumn(row[column])
             ))
           }
       </View>
   )
 
-  renderColumn = column => (
-      <View style={ { width: 100 } }>
+  renderColumn = (column, key) => (
+      <View key={ key } style={ { width: 55, padding: 2 } }>
           <Text>
               { column }
           </Text>
@@ -23,9 +28,11 @@ export default class List extends React.Component {
 
   render () {
     return (
-        <ScrollView style={ { } }>
+        <ScrollView
+          style={ { padding: 5 } }
+        >
             {
-              this.props.items.map(row => this.renderRow(row))
+              this.props.items.map((row, index) => this.renderRow(row))
             }
         </ScrollView>
     );
