@@ -25,6 +25,10 @@ export default class SearchBox extends React.Component {
     }, 1000);
   };
 
+  onCencel = () => {
+    clearTimeout(timeout);
+  }
+
   render () {
     const { search } = this.state;
 
@@ -34,6 +38,7 @@ export default class SearchBox extends React.Component {
           inputContainerStyle={ { backgroundColor: 'white', borderWidth: 1 } }
           placeholder="Type Here..."
           onChangeText={ this.updateSearch }
+          onCencel={ this.onCencel }
           value={ search }
         />
     );
