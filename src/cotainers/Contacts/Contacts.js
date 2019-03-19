@@ -10,9 +10,20 @@ export default class Contacts extends Component {
     return (
         <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
-            <Text>
-                CONTACTS PAGE
-            </Text>
+            <Text>Contact Us</Text>
+            <View>
+                <Text>EPAM GitHub Radar Delivery Team</Text>
+                <Text>
+                        3/F, Block 5, Vision Shenzhen Business Park,9th Gaoxin South Road,
+                        /n Shenzhen Hi-tech Industrial Park,Nanshan District,
+                        /n Shenzhen,Guangdong, China 518057
+
+                </Text>
+                <Text>
+                    <Text>MAP</Text>
+                </Text>
+                <Text> P: +86-755-36899008</Text>
+            </View>
         </View>
     );
   }

@@ -3,6 +3,8 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from '../../components/Header/Header';
+import Introduction from '../../components/Introduction/Introduction';
+import Feature from '../../components/Feature/Feature';
 
 export default class About extends Component {
   render () {
@@ -10,9 +12,10 @@ export default class About extends Component {
     return (
         <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
-            <Text>
-                ABOUT PAGE
-            </Text>
+            <View>
+                <Introduction />
+                <Feature />
+            </View>
         </View>
     );
   }
