@@ -8,7 +8,7 @@ import PureChart from 'react-native-pure-chart';
 import Header from '../../components/Header/Header';
 import getTrends from '../../store/actions/trends';
 
-const colors = ['#56e2a3', '#c5f722', '#3f587f', '#f76e4c', '#f7f44c'];
+const colors = ['#56e2a3', '#c5f722', '#3f587f', '#f76e4c', '#cccc00'];
 
 export class Trends extends Component {
   constructor (props) {
@@ -52,7 +52,7 @@ export class Trends extends Component {
                   languages.map((lang, index) => (
                       <Text
                         key={ index }
-                        style={ { color: lang.color } }
+                        style={ { color: lang.color, textShadowColor: lang.color } }
                       >
                           { ' ' }
                           { lang.label }
