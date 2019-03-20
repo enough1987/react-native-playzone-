@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PureChart from 'react-native-pure-chart';
 
 import Header from '../../components/Header/Header';
 import getTrends from '../../store/actions/trends';
+
+const colors = ['#56e2a3', '#c5f722', '#3f587f', '#f76e4c', '#f7f44c'];
 
 export class Trends extends Component {
   constructor (props) {
@@ -16,38 +18,46 @@ export class Trends extends Component {
 
   render () {
     console.log('TRENDS : ', this.props.languageTrends);
-    const sampleData = [
-      {
-        seriesName: 'Javascript',
-        data: [
-          { x: '2014', y: 30 },
-          { x: '2015', y: 60 },
-          { x: '2016', y: 100 },
-          { x: '2017', y: 190 },
-          { x: '2018', y: 300 }
-        ],
-        color: '#297AB1'
-      },
-      {
-        seriesName: 'Java',
-        data: [
-          { x: '2014', y: 40 },
-          { x: '2015', y: 50 },
-          { x: '2016', y: 90 },
-          { x: '2017', y: 130 },
-          { x: '2018', y: 150 }
-        ],
-        color: 'yellow'
-      }
-    ];
+
+    const data = [];
+    const languages = [];
+    this.props.languageTrends.forEach((trend, index) => {
+      languages.push({
+        label: trend.language,
+        color: colors[index]
+      });
+      data.push({
+        seriesName: trend.language,
+        data: trend.results
+          .map(item => ({ x: item.date, y: item.total_Count }))
+          .slice(Math.max(trend.results.length - 6, 1)),
+        color: colors[index]
+      });
+    });
+
+    console.log(data);
+
     return (
         <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
             <PureChart
+              width="100%"
               height={ 400 }
-              data={ sampleData }
+              data={ data }
               type="line"
             />
+            {
+              languages.map((lang, index) => (
+                  <Text
+                    key={ index }
+                    style={ { color: lang.color } }
+                  >
+                      {' '}
+                      { lang.label }
+                      {' '}
+                  </Text>
+              ))
+            }
         </View>
     );
   }
