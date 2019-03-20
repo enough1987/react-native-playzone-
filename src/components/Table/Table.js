@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import Header from './Header';
 import List from './List';
+import styles from './TableStyle';
 
 const widths = [80, 65, 65, 110];
 
@@ -23,7 +24,7 @@ export default class Table extends React.Component {
                       items={ this.props.data }
                     />
                 )
-                : <Text> Please search </Text>
+                : <Text style={ styles.searchText }> Please search </Text>
             }
         </View>
     );

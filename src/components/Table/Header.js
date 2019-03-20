@@ -21,7 +21,7 @@ export class Header extends React.Component {
     let iconColor = '#fff';
 
     if (this.props.sortedBy.label === column.label) {
-      iconColor = '#fff';
+      iconColor = '#1a0000';
       iconName = this.props.sortedBy.order === 'asc'
         ? 'ios-arrow-down'
         : 'ios-arrow-up';

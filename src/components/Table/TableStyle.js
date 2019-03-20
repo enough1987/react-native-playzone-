@@ -27,5 +27,11 @@ export default {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 5
+  },
+  searchText: {
+    marginVertical: 35,
+    textAlign: 'center',
+    fontSize: 20,
+    color: '#444'
   }
 };
