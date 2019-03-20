@@ -6,7 +6,6 @@ import styles from './ContactsStyle';
 
 export default class Contacts extends Component {
   render () {
-    console.log('CONTACTS PAGE');
     return (
         <View style={ styles.contacts }>
             <Text style={ styles.title }>Contact Us</Text>

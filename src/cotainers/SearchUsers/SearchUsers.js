@@ -15,7 +15,6 @@ export class SearchUsers extends Component {
   }
 
   render () {
-    console.log('HOME PAGE ', this.props.usersList);
     return (
         <View style={ styles.container }>
             <SearchBox update={ this.updateSearch } />
@@ -49,14 +48,11 @@ SearchUsers.propTypes = {
   usersList: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return ({
-    loading: state.common.loading,
-    headersList: state.searchUsers.headersList,
-    usersList: state.searchUsers.usersList
-  });
-};
+const mapStateToProps = state => ({
+  loading: state.common.loading,
+  headersList: state.searchUsers.headersList,
+  usersList: state.searchUsers.usersList
+});
 
 const mapDispatchToProps = dispatch => ({
   searchUsers: item => dispatch(searchUsers(item))

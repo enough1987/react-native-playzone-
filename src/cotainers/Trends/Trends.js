@@ -17,8 +17,6 @@ export class Trends extends Component {
   }
 
   render () {
-    console.log('TRENDS : ', this.props.languageTrends);
-
     const data = [];
     const languages = [];
     this.props.languageTrends.forEach((trend, index) => {
@@ -49,6 +47,7 @@ export class Trends extends Component {
                 {
                   languages.map((lang, index) => (
                       <Text
+                        // eslint-disable-next-line react/no-array-index-key
                         key={ index }
                         style={ { color: lang.color, textShadowColor: lang.color } }
                       >
