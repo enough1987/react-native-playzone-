@@ -1,6 +1,7 @@
 import { isLoadingAction, requestFailAction } from './common';
 import actionTypes from './actionTypes';
 
+const baseUrl = 'http://ec2-54-222-208-228.cn-north-1.compute.amazonaws.com.cn:8000';
 const headers = {
   'Content-type': 'application/json',
   Accept: 'application/json'
@@ -9,7 +10,7 @@ const headers = {
 const getTrends = () => (dispatch) => {
   dispatch(isLoadingAction(true, actionTypes.GET_TRENDS));
 
-  return fetch('/api/github/trendlist', {
+  return fetch(`${baseUrl}/api/github/trendlist`, {
     method: 'GET',
     mode: 'no-cors',
     headers

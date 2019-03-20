@@ -8,7 +8,7 @@ const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
     case actionTypes.SEARCH_USERS:
       if (Array.isArray(action.payload.items)) {
-        const userList = action.payload.items.reduce((arr, item) => {
+        const usersList = action.payload.items.reduce((arr, item) => {
           arr.push({
             name: item.name,
             forks: item.forks,
@@ -21,7 +21,7 @@ const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
         }, []);
         return {
           ...state,
-          userList
+          usersList
         };
       }
       return state; // TODO: can it be not an array?
