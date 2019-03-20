@@ -7,9 +7,9 @@ const staticText = "We are experiencing Kanban development, with the from Techni
 export default class Introduction extends React.Component {
   render () {
     return (
-        <View style={styles.introduction}>
-            <Text style={styles.title}>Introduction</Text>
-            <Text style={styles.content}>
+        <View style={ styles.introduction }>
+            <Text style={ styles.title }>Introduction</Text>
+            <Text style={ styles.content }>
                 { staticText }
             </Text>
         </View>

@@ -17,9 +17,9 @@ import store from '../../store/store';
 const TabNavigator = createBottomTabNavigator(
   {
     Home: SearchUsers,
-    Trends: Trends,
-    About: About,
-    Contacts: Contacts,
+    Trends,
+    About,
+    Contacts
   },
   {
     defaultNavigationOptions: ({ navigation }) => ({
@@ -28,7 +28,7 @@ const TabNavigator = createBottomTabNavigator(
         let iconName;
         switch (routeName) {
           case 'Home':
-          iconName = 'home';
+            iconName = 'home';
             break;
           case 'Trends':
             iconName = 'chart-line';
@@ -42,13 +42,13 @@ const TabNavigator = createBottomTabNavigator(
           default:
             break;
         }
-        return <FontAwesome5 name={iconName} size={20} color={tintColor} />;
-      },
+        return <FontAwesome5 name={ iconName } size={ 20 } color={ tintColor } />;
+      }
     }),
     tabBarOptions: {
       activeTintColor: '#76cdd8',
-      inactiveTintColor: '#888',
-    },
+      inactiveTintColor: '#888'
+    }
   }
 );
 const AppContainer = createAppContainer(TabNavigator);

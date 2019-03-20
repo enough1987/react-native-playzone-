@@ -1,20 +1,20 @@
 const colorBlue = '#76cdd8';
-export default styles = {
+export default {
   colorBlue,
   feature: {
-    padding: 15,
+    padding: 15
   },
   title: {
     marginVertical: 15,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#222',
+    color: '#222'
   },
   item: {
     marginVertical: 10,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   icon: {
     alignItems: 'center',
@@ -23,19 +23,19 @@ export default styles = {
     height: 60,
     borderWidth: 1,
     borderColor: colorBlue,
-    borderRadius: 30,
+    borderRadius: 30
   },
   desc: {
     flex: 1,
-    paddingLeft: 15,
+    paddingLeft: 15
   },
   descTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#444',
+    color: '#444'
   },
   descContent: {
     fontSize: 14,
-    color: '#666',
-  },
+    color: '#666'
+  }
 };

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Introduction from '../../components/Introduction/Introduction';
@@ -11,7 +11,7 @@ export default class About extends Component {
   render () {
     console.log('ABOUT PAGE');
     return (
-        <ScrollView style={styles.about}>
+        <ScrollView style={ styles.about }>
             <Introduction />
             <Feature />
         </ScrollView>

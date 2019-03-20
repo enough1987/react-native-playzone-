@@ -1,6 +1,6 @@
-export default styles = {
+export default {
   about: {
-    flex: 1,
+    flex: 1
     // paddingHorizontal: 15,
-  },
+  }
 };
