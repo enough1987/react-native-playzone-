@@ -28,6 +28,7 @@ export class Trends extends Component {
       });
       data.push({
         seriesName: trend.language,
+        label: trend.language,
         data: trend.results
           .map(item => ({ x: item.date, y: item.total_Count }))
           .slice(Math.max(trend.results.length - 6, 1)),
@@ -46,18 +47,20 @@ export class Trends extends Component {
               data={ data }
               type="line"
             />
-            {
-              languages.map((lang, index) => (
-                  <Text
-                    key={ index }
-                    style={ { color: lang.color } }
-                  >
-                      {' '}
-                      { lang.label }
-                      {' '}
-                  </Text>
-              ))
-            }
+            <Text style={ { fontWeight: 'bold', textAlign: 'center' } }>
+                {
+                  languages.map((lang, index) => (
+                      <Text
+                        key={ index }
+                        style={ { color: lang.color } }
+                      >
+                          { ' ' }
+                          { lang.label }
+                          { ' ' }
+                      </Text>
+                  ))
+                }
+            </Text>
         </View>
     );
   }
