@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -15,10 +15,16 @@ export default class Table extends React.Component {
               columnsWidth={ widths }
               items={ this.props.headers }
             />
-            <List
-              columnsWidth={ widths }
-              items={ this.props.data }
-            />
+            {
+              this.props.data
+                ? (
+                    <List
+                      columnsWidth={ widths }
+                      items={ this.props.data }
+                    />
+                )
+                : <Text> Please search </Text>
+            }
         </ScrollView>
     );
   }
