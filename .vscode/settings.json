@@ -1,5 +1,4 @@
 {
     "flowide.pathToFlow": "flow",
-    "javascript.validate.enable": false,
-    "files.autoSave": "afterDelay"
+    "javascript.validate.enable": false
 }

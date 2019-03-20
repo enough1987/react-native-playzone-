@@ -1,28 +1,38 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import PropTypes from 'prop-types';
+import { View, Text, Linking } from 'react-native';
+import PropTypes from 'prop-types';import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import Header from '../../components/Header/Header';
+import styles from './ContactsStyle';
 
 export default class Contacts extends Component {
   render () {
     console.log('CONTACTS PAGE');
     return (
-        <View style={ { flex: 1 } }>
-            <Header navigation={ this.props.navigation } />
-            <Text>Contact Us</Text>
-            <View>
-                <Text>EPAM GitHub Radar Delivery Team</Text>
-                <Text>
+        <View style={styles.contacts}>
+            <Text style={styles.title}>Contact Us</Text>
+            <View style={styles.content}>
+                <Text style={styles.contentTitle}>EPAM GitHub Radar Delivery Team</Text>
+                <Text style={styles.contentAdd}>
                         3/F, Block 5, Vision Shenzhen Business Park,9th Gaoxin South Road,
-                        /n Shenzhen Hi-tech Industrial Park,Nanshan District,
-                        /n Shenzhen,Guangdong, China 518057
+                        {'\n'}Shenzhen Hi-tech Industrial Park,Nanshan District,Shenzhen,Guangdong, China 518057
 
                 </Text>
-                <Text>
-                    <Text>MAP</Text>
-                </Text>
-                <Text> P: +86-755-36899008</Text>
+                <View style={styles.contentMap}>
+                    <FontAwesome5
+                        name="map-marker-alt"
+                        color="#76cdd8"
+                        size={ 20 }
+                    />
+                    <Text style={styles.contentMapDesc} onPress={() => Linking.openURL('http://j.map.baidu.com/U-9oO')}>MAP</Text>
+                </View>
+                <View style={styles.contentMobile}>
+                    <FontAwesome5
+                        name="mobile-alt"
+                        color="#76cdd8"
+                        size={ 20 }
+                    />
+                    <Text style={styles.contentMobileNumber} onPress={() => Linking.openURL('tel:+86-755-36899008')}>+86-755-36899008</Text>
+                </View>
             </View>
         </View>
     );
