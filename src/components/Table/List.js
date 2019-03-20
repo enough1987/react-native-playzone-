@@ -8,9 +8,10 @@ export default class List extends React.Component {
   renderRow = (row, key) => (
       <View
         key={ key }
-        style={[styles.row, {
-          backgroundColor: key % 2 ? '#efefef' : '#fff',
-        }]}
+        style={ {
+          ...styles.row,
+          backgroundColor: key % 2 ? '#efefef' : '#fff'
+        } }
       >
           {
             Object.keys(row).map((column, index) => (
@@ -33,7 +34,7 @@ export default class List extends React.Component {
 
   render () {
     return (
-        <ScrollView>
+        <ScrollView style={ { flex: 1, padding: 5 } }>
             {
               this.props.items.map((row, index) => this.renderRow(row, index))
             }

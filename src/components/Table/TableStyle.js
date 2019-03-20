@@ -1,24 +1,31 @@
-export default styles = {
+export default {
   header: {
-    flex: 1,
-    alignSelf: 'stretch', flexDirection: 'row',
+    alignSelf: 'stretch',
+    flexDirection: 'row',
     backgroundColor: '#76cdd8',
+    padding: 5
   },
   headerItem: {
     alignItems: 'center',
     paddingVertical: 5,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   headrTitle: {
     fontSize: 16,
     color: '#fff',
-    marginRight: 5,
-    // flex: 1,
+    marginRight: 5
   },
   row: {
     flex: 1,
-    alignSelf: 'stretch', flexDirection: 'row',
+    alignSelf: 'stretch',
+    flexDirection: 'row',
     alignItems: 'center',
-    padding: 5,
+    padding: 5
   },
-}
+  listContainer: {
+    alignSelf: 'stretch',
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 5
+  }
+};

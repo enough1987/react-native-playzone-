@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
@@ -10,13 +10,13 @@ const widths = [80, 65, 65, 110];
 export default class Table extends React.Component {
   render () {
     return (
-        <ScrollView style={ { flex: 1 } }>
+        <View style={ { flex: 1 } }>
             <Header
               columnsWidth={ widths }
               items={ this.props.headers }
             />
             {
-              this.props.data
+              this.props.data.length
                 ? (
                     <List
                       columnsWidth={ widths }
@@ -25,7 +25,7 @@ export default class Table extends React.Component {
                 )
                 : <Text> Please search </Text>
             }
-        </ScrollView>
+        </View>
     );
   }
 }

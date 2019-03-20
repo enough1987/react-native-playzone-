@@ -37,7 +37,7 @@ export default class SearchBox extends React.Component {
           platform="ios"
           lightTheme
           containerStyle={ { backgroundColor: '#fff' } }
-          inputContainerStyle={ { backgroundColor: '#efefef', } }
+          inputContainerStyle={ { backgroundColor: '#efefef' } }
           placeholder="Type Here..."
           onChangeText={ this.updateSearch }
           onCancel={ this.onCancel }

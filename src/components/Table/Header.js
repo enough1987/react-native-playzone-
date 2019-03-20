@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
@@ -32,7 +32,7 @@ export class Header extends React.Component {
           key={ key }
           style={ [styles.headerItem, { width, padding: 2 }] }
         >
-            <Text style={styles.headrTitle}>
+            <Text style={ styles.headrTitle }>
                 { column.label }
             </Text>
 
@@ -51,19 +51,15 @@ export class Header extends React.Component {
 
   render () {
     return (
-        <ScrollView
-          style={ { padding: 5, backgroundColor: '#76cdd8' } }
+        <View
+          style={ styles.header }
         >
-            <View
-              style={styles.header}
-            >
-                {
-                  this.props.items.map((column, index) => (
-                    this.renderColumn(column, index, this.props.columnsWidth[index])
-                  ))
-                }
-            </View>
-        </ScrollView>
+            {
+              this.props.items.map((column, index) => (
+                this.renderColumn(column, index, this.props.columnsWidth[index])
+              ))
+            }
+        </View>
     );
   }
 }

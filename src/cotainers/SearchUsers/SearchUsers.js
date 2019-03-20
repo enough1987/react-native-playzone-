@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -17,6 +17,7 @@ export class SearchUsers extends Component {
   render () {
     return (
         <View style={ styles.container }>
+            <Text style={ styles.title }> Home </Text>
             <SearchBox update={ this.updateSearch } />
             {
               this.props.loading[searchPageActionTypes.SEARCH_USERS]
