@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ActivityIndicator, Text } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -19,17 +19,13 @@ export class SearchUsers extends Component {
         <View style={ styles.container }>
             <SearchBox update={ this.updateSearch } />
             {
-              // eslint-disable-next-line no-nested-ternary
               this.props.loading[searchPageActionTypes.SEARCH_USERS]
                 ? <ActivityIndicator size="large" color="#76cdd8" />
-                : (this.props.usersList.length // TODO : this nested ternary
-                  ? (
-                      <Table
-                        data={ this.props.usersList }
-                        headers={ this.props.headersList }
-                      />
-                  )
-                  : <Text> Please search </Text>
+                : (
+                    <Table
+                      data={ this.props.usersList }
+                      headers={ this.props.headersList }
+                    />
                 )
             }
         </View>
