@@ -21,7 +21,7 @@ export class SearchUsers extends Component {
             {
               // eslint-disable-next-line no-nested-ternary
               this.props.loading[searchPageActionTypes.SEARCH_USERS]
-                ? <ActivityIndicator size="large" color="#0000ff" />
+                ? <ActivityIndicator size="large" color="#76cdd8" />
                 : (this.props.usersList.length // TODO : this nested ternary
                   ? (
                       <Table

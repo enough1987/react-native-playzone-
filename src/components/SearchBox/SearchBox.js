@@ -25,7 +25,7 @@ export default class SearchBox extends React.Component {
     }, 1000);
   };
 
-  onCencel = () => {
+  onCancel = () => {
     clearTimeout(timeout);
   }
 
@@ -34,11 +34,13 @@ export default class SearchBox extends React.Component {
 
     return (
         <SearchBar
-          containerStyle={ { backgroundColor: 'white', borderWidth: 1, marginBottom: 10 } }
-          inputContainerStyle={ { backgroundColor: 'white', borderWidth: 1 } }
+          platform="ios"
+          lightTheme
+          containerStyle={ { backgroundColor: '#fff' } }
+          inputContainerStyle={ { backgroundColor: '#efefef', } }
           placeholder="Type Here..."
           onChangeText={ this.updateSearch }
-          onCencel={ this.onCencel }
+          onCancel={ this.onCancel }
           value={ search }
         />
     );

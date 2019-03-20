@@ -2,13 +2,15 @@ import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
+import styles from './TableStyle';
+
 export default class List extends React.Component {
   renderRow = (row, key) => (
       <View
         key={ key }
-        style={ {
-          flex: 1, alignSelf: 'stretch', flexDirection: 'row', padding: 1
-        } }
+        style={[styles.row, {
+          backgroundColor: key % 2 ? '#efefef' : '#fff',
+        }]}
       >
           {
             Object.keys(row).map((column, index) => (
@@ -31,9 +33,7 @@ export default class List extends React.Component {
 
   render () {
     return (
-        <ScrollView
-          style={ { padding: 5 } }
-        >
+        <ScrollView>
             {
               this.props.items.map((row, index) => this.renderRow(row, index))
             }

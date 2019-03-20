@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { connect } from 'react-redux';
 
 import { sortUsers } from '../../store/actions/searchUsers';
+import styles from './TableStyle';
 
 export class Header extends React.Component {
   updateSort = (label) => {
@@ -17,10 +18,10 @@ export class Header extends React.Component {
 
   renderColumn = (column, key, width) => {
     let iconName = 'ios-arrow-up';
-    let iconColor = '#ccc';
+    let iconColor = '#fff';
 
     if (this.props.sortedBy.label === column.label) {
-      iconColor = 'red';
+      iconColor = '#fff';
       iconName = this.props.sortedBy.order === 'asc'
         ? 'ios-arrow-down'
         : 'ios-arrow-up';
@@ -29,9 +30,9 @@ export class Header extends React.Component {
     return (
         <View
           key={ key }
-          style={ { width, padding: 2 } }
+          style={ [styles.headerItem, { width, padding: 2 }] }
         >
-            <Text>
+            <Text style={styles.headrTitle}>
                 { column.label }
             </Text>
 
@@ -51,12 +52,10 @@ export class Header extends React.Component {
   render () {
     return (
         <ScrollView
-          style={ { padding: 5, backgroundColor: 'grey' } }
+          style={ { padding: 5, backgroundColor: '#76cdd8' } }
         >
             <View
-              style={ {
-                flex: 1, alignSelf: 'stretch', flexDirection: 'row', padding: 1
-              } }
+              style={styles.header}
             >
                 {
                   this.props.items.map((column, index) => (
