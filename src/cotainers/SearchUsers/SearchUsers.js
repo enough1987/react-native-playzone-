@@ -15,7 +15,7 @@ export class SearchUsers extends Component {
   }
 
   render () {
-    console.log('HOME PAGE', this.props.usersList);
+    console.log('HOME PAGE ', this.props.usersList);
     return (
         <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />

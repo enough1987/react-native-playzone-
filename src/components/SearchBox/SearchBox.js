@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 let timeout = null;
 
 export default class SearchBox extends React.Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       search: ''
     };

@@ -1,7 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
-  trends: []
+  languageTrends: []
 };
 
 const trendsReducer = (state = INITIAL_STATE, action = {}) => {

@@ -5,11 +5,19 @@ import {
 import * as shape from 'd3-shape';
 import { StyleSheet, SafeAreaView, View } from 'react-native';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Header from '../../components/Header/Header';
+import getTrends from '../../store/actions/trends';
 
-export default class Trends extends Component {
+export class Trends extends Component {
+  constructor (props) {
+    super(props);
+    props.getTrends();
+  }
+
   render () {
+    console.log('TRENDS : ', this.props.languageTrends);
     const data1 = [50, 55, 65, 95, 99, 120, 140];
     const data2 = [60, 62, 65, 75, 79, 87, 95];
     const years = [2013, 2014, 2015, 2016, 2017, 2018];
@@ -61,5 +69,18 @@ export default class Trends extends Component {
 Trends.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func
-  }).isRequired
+  }).isRequired,
+  languageTrends: PropTypes.arrayOf(PropTypes.object)
+    .isRequired,
+  getTrends: PropTypes.func.isRequired
 };
+
+const mapStateToProps = state => ({
+  languageTrends: state.trends.languageTrends
+});
+
+const mapDispatchToProps = dispatch => ({
+  getTrends: item => dispatch(getTrends())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Trends);
