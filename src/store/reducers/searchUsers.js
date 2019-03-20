@@ -1,3 +1,4 @@
+import orderBy from 'lodash/orderBy';
 import actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
@@ -8,11 +9,21 @@ const INITIAL_STATE = {
     { label: 'size' },
     { label: 'desc' }
   ],
-  usersList: []
+  usersList: [],
+  sortedBy: {
+    label: '',
+    order: ''
+  }
 };
 
 const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
   switch (action.type) {
+    case actionTypes.SORT_USERS:
+      return {
+        ...state,
+        sortedBy: { label: action.label, order: action.order },
+        usersList: orderBy(state.usersList, [action.label], [action.order])
+      };
     case actionTypes.SEARCH_USERS:
       if (Array.isArray(action.payload.items)) {
         const usersList = action.payload.items.reduce((arr, item) => {

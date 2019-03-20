@@ -7,6 +7,12 @@ const headers = {
   Accept: 'application/json'
 };
 
+export const sortUsers = (label, order) => ({
+  type: actionTypes.SORT_USERS,
+  label,
+  order
+});
+
 export const searchUsers = keyword => (dispatch) => {
   dispatch(isLoadingAction(true, actionTypes.SEARCH_USERS));
 
@@ -26,9 +32,3 @@ export const searchUsers = keyword => (dispatch) => {
       dispatch(isLoadingAction(false, actionTypes.SEARCH_USERS));
     });
 };
-
-export const sortAction = (sortBy, seq) => ({
-  type: actionTypes.SORT_USERS,
-  sortBy,
-  seq
-});

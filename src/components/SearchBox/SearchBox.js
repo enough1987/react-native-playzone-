@@ -22,7 +22,7 @@ export default class SearchBox extends React.Component {
     }
     timeout = setTimeout(() => {
       this.props.update(search);
-    }, 1500);
+    }, 1000);
   };
 
   onCencel = () => {

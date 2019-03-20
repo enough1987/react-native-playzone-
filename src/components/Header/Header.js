@@ -3,11 +3,6 @@ import { Button, View } from 'react-native';
 import PropTypes from 'prop-types';
 
 export default class Header extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = {};
-  }
-
   render () {
     console.log(' ---- ', this.props);
 

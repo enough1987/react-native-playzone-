@@ -9,8 +9,12 @@ export default class Table extends React.Component {
   render () {
     return (
         <ScrollView style={ { flex: 1 } }>
-            <Header items={ this.props.headers } />
-            <List items={ this.props.data } />
+            <Header
+              items={ this.props.headers }
+            />
+            <List
+              items={ this.props.data }
+            />
         </ScrollView>
     );
   }

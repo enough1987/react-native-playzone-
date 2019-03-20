@@ -1,18 +1,52 @@
 import React from 'react';
 import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
+import Icon from 'react-native-vector-icons/Ionicons';
+import { connect } from 'react-redux';
 
-export default class Header extends React.Component {
-  renderColumn = (column, key) => (
-      <View
-        key={ key }
-        style={ { width: 70, padding: 2 } }
-      >
-          <Text>
-              { column.label }
-          </Text>
-      </View>
-  )
+import { sortUsers } from '../../store/actions/searchUsers';
+
+export class Header extends React.Component {
+  updateSort = (label) => {
+    const order = this.props.sortedBy.order === 'asc'
+      ? 'desc'
+      : 'asc';
+
+    this.props.sortUsers(label, order);
+  }
+
+  renderColumn = (column, key) => {
+    let iconName = 'ios-arrow-up';
+    let iconColor = '#ccc';
+
+    if (this.props.sortedBy.label === column.label) {
+      iconColor = 'red';
+      iconName = this.props.sortedBy.order === 'asc'
+        ? 'ios-arrow-down'
+        : 'ios-arrow-up';
+    }
+
+    return (
+        <View
+          key={ key }
+          style={ { width: 70, padding: 2 } }
+        >
+            <Text>
+                { column.label }
+            </Text>
+
+            <Icon
+              name={ iconName }
+              color={ iconColor }
+              size={ 15 }
+              onPress={ () => this.updateSort(
+                column.label
+              ) }
+            />
+
+        </View>
+    );
+  }
 
   render () {
     return (
@@ -36,5 +70,20 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sortUsers: PropTypes.func.isRequired,
+  sortedBy: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    order: PropTypes.string.isRequired
+  }).isRequired
 };
+
+const mapStateToProps = state => ({
+  sortedBy: state.searchUsers.sortedBy
+});
+
+const mapDispatchToProps = dispatch => ({
+  sortUsers: (label, order) => dispatch(sortUsers(label, order))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

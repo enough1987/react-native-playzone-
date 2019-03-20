@@ -4,7 +4,8 @@ const commonActionTypes = {
 };
 
 const searchPageActionTypes = {
-  SEARCH_USERS: 'SEARCH_USERS'
+  SEARCH_USERS: 'SEARCH_USERS',
+  SORT_USERS: 'SORT_USERS'
 };
 
 const trendsPageActionTypes = {
