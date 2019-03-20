@@ -11,14 +11,12 @@
     "debugger": "open 'rndebugger://set-debugger-loc?host=localhost&port=8081'"
   },
   "dependencies": {
-    "d3-shape": "^1.3.4",
     "lodash": "^4.17.11",
     "react": "16.8.3",
     "react-native": "0.59.1",
     "react-native-elements": "^1.1.0",
     "react-native-gesture-handler": "^1.1.0",
-    "react-native-svg": "^9.3.5",
-    "react-native-svg-charts": "^5.2.0",
+    "react-native-pure-chart": "0.0.24",
     "react-native-vector-icons": "^6.4.1",
     "react-navigation": "^3.4.1",
     "react-redux": "^6.0.1",

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import {
-  LineChart, YAxis, XAxis, Grid
-} from 'react-native-svg-charts';
-import * as shape from 'd3-shape';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import PureChart from 'react-native-pure-chart';
 
 import Header from '../../components/Header/Header';
 import getTrends from '../../store/actions/trends';
@@ -18,50 +16,39 @@ export class Trends extends Component {
 
   render () {
     console.log('TRENDS : ', this.props.languageTrends);
-    const data1 = [50, 55, 65, 95, 99, 120, 140];
-    const data2 = [60, 62, 65, 75, 79, 87, 95];
-    const years = [2013, 2014, 2015, 2016, 2017, 2018];
-
+    const sampleData = [
+      {
+        seriesName: 'Javascript',
+        data: [
+          { x: '2014', y: 30 },
+          { x: '2015', y: 60 },
+          { x: '2016', y: 100 },
+          { x: '2017', y: 190 },
+          { x: '2018', y: 300 }
+        ],
+        color: '#297AB1'
+      },
+      {
+        seriesName: 'Java',
+        data: [
+          { x: '2014', y: 40 },
+          { x: '2015', y: 50 },
+          { x: '2016', y: 90 },
+          { x: '2017', y: 130 },
+          { x: '2018', y: 150 }
+        ],
+        color: 'yellow'
+      }
+    ];
     return (
-        <SafeAreaView style={ { flex: 1, backgroundColor: '#fff', padding: 5 } }>
+        <View style={ { flex: 1 } }>
             <Header navigation={ this.props.navigation } />
-            <View style={ { height: 400, flexDirection: 'row-reverse' } }>
-                <YAxis
-                  data={ data1 }
-                  formatLabel={ value => `${value}` }
-                  contentInset={ { top: 20, bottom: 20 } }
-                  svg={ {
-                    fill: 'grey',
-                    fontSize: 10
-                  } }
-                  numberOfTicks={ 6 }
-                />
-                <LineChart
-                  style={ { flex: 1, marginLeft: 16, marginRight: 10 } }
-                  data={ data1 }
-                  gridMin={ 0 }
-                  contentInset={ { top: 20, bottom: 20 } }
-                  svg={ { stroke: 'red' } }
-                  curve={ shape.curveNatural }
-                >
-                    <Grid />
-                </LineChart>
-                <LineChart
-                  style={ StyleSheet.absoluteFill }
-                  data={ data2 }
-                  gridMin={ 0 }
-                  contentInset={ { top: 20, bottom: 20 } }
-                  svg={ { stroke: 'blue' } }
-                  curve={ shape.curveNatural }
-                />
-            </View>
-            <XAxis
-              data={ data1 }
-              formatLabel={ (value, index) => years[index] }
-              contentInset={ { left: 30, right: 10 } }
-              svg={ { fontSize: 10, fill: 'black' } }
+            <PureChart
+              height={ 400 }
+              data={ sampleData }
+              type="line"
             />
-        </SafeAreaView>
+        </View>
     );
   }
 }
