@@ -1,11 +1,6 @@
 import { isLoadingAction, requestFailAction } from './common';
 import actionTypes from './actionTypes';
-
-const baseUrl = 'http://ec2-54-222-208-228.cn-north-1.compute.amazonaws.com.cn:8000';
-const headers = {
-  'Content-type': 'application/json',
-  Accept: 'application/json'
-};
+import { baseUrl, headers } from '../constants';
 
 export const sortUsers = (label, order) => ({
   type: actionTypes.SORT_USERS,
@@ -16,7 +11,7 @@ export const sortUsers = (label, order) => ({
 export const searchUsers = keyword => (dispatch) => {
   dispatch(isLoadingAction(true, actionTypes.SEARCH_USERS));
 
-  return fetch(`${baseUrl}/api/github/search/${keyword}`, { // TODO : fix
+  return fetch(`${baseUrl}/api/github/search/${keyword}`, {
     method: 'GET',
     mode: 'no-cors',
     headers

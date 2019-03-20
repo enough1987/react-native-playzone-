@@ -5,7 +5,7 @@ export default {
   },
   title: {
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 25,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',

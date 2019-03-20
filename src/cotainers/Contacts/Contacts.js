@@ -23,7 +23,12 @@ Shenzhen Hi-tech Industrial Park,Nanshan District,Shenzhen,Guangdong, China 5180
                       color="#76cdd8"
                       size={ 20 }
                     />
-                    <Text style={ styles.contentMapDesc } onPress={ () => Linking.openURL('http://j.map.baidu.com/U-9oO') }>MAP</Text>
+                    <Text
+                      style={ styles.contentMapDesc }
+                      onPress={ () => Linking.openURL('http://j.map.baidu.com/U-9oO') }
+                    >
+                        MAP
+                    </Text>
                 </View>
                 <View style={ styles.contentMobile }>
                     <FontAwesome5
@@ -31,7 +36,12 @@ Shenzhen Hi-tech Industrial Park,Nanshan District,Shenzhen,Guangdong, China 5180
                       color="#76cdd8"
                       size={ 20 }
                     />
-                    <Text style={ styles.contentMobileNumber } onPress={ () => Linking.openURL('tel:+86-755-36899008') }>+86-755-36899008</Text>
+                    <Text
+                      style={ styles.contentMobileNumber }
+                      onPress={ () => Linking.openURL('tel:+86-755-36899008') }
+                    >
+                        +86-755-36899008
+                    </Text>
                 </View>
             </View>
         </View>

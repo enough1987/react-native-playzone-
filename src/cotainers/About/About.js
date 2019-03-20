@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 import Introduction from '../../components/Introduction/Introduction';
 import Feature from '../../components/Feature/Feature';
-
 import styles from './AboutStyle';
 
 export default class About extends Component {

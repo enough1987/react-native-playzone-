@@ -88,7 +88,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getTrends: item => dispatch(getTrends())
+  getTrends: () => dispatch(getTrends())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Trends);
