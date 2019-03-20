@@ -25,7 +25,12 @@ export class SearchUsers extends Component {
               this.props.loading[searchPageActionTypes.SEARCH_USERS]
                 ? <ActivityIndicator size="large" color="#0000ff" />
                 : (this.props.usersList.length // TODO : this nested ternary
-                  ? <Table data={ this.props.usersList } />
+                  ? (
+                      <Table
+                        data={ this.props.usersList }
+                        headers={ this.props.headersList }
+                      />
+                  )
                   : <Text> Please search </Text>
                 )
             }
@@ -41,6 +46,7 @@ SearchUsers.propTypes = {
   searchUsers: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   loading: PropTypes.object.isRequired,
+  headersList: PropTypes.arrayOf(PropTypes.object).isRequired,
   usersList: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
@@ -48,6 +54,7 @@ const mapStateToProps = (state) => {
   console.log(state);
   return ({
     loading: state.common.loading,
+    headersList: state.searchUsers.headersList,
     usersList: state.searchUsers.usersList
   });
 };

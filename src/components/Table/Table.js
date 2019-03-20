@@ -4,39 +4,19 @@ import PropTypes from 'prop-types';
 
 import Header from './Header';
 import List from './List';
-import data from '../../assets/language';
-
-const headers = [
-  { label: 'name' },
-  { label: 'forks' },
-  { label: 'stars' },
-  { label: 'size' },
-  { label: 'language' },
-  { label: 'desc' }
-];
 
 export default class Table extends React.Component {
   render () {
-    const items = data.items.map(item => ({
-      name: item.name,
-      forks: item.forks,
-      stars: item.stargazers_count,
-      size: item.size,
-      language: item.language,
-      desc: item.description ? `${item.description.slice(0, 10)}...` : null
-    }));
-
-    console.log(' ---- ', items, this.props.data);
-
     return (
         <ScrollView style={ { flex: 1 } }>
-            <Header items={ headers } />
-            <List items={ items } />
+            <Header items={ this.props.headers } />
+            <List items={ this.props.data } />
         </ScrollView>
     );
   }
 }
 
 Table.propTypes = {
+  headers: PropTypes.arrayOf(PropTypes.object).isRequired,
   data: PropTypes.arrayOf(PropTypes.object).isRequired
 };

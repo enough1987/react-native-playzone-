@@ -1,6 +1,13 @@
 import actionTypes from '../actions/actionTypes';
 
 const INITIAL_STATE = {
+  headersList: [
+    { label: 'name' },
+    { label: 'forks' },
+    { label: 'stars' },
+    { label: 'size' },
+    { label: 'desc' }
+  ],
   usersList: []
 };
 
@@ -14,7 +21,6 @@ const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
             forks: item.forks,
             stars: item.stargazers_count,
             size: item.size,
-            language: item.language,
             desc: item.description
           });
           return arr;

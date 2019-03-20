@@ -6,7 +6,7 @@ export default class Header extends React.Component {
   renderColumn = (column, key) => (
       <View
         key={ key }
-        style={ { width: 55, padding: 2 } }
+        style={ { width: 70, padding: 2 } }
       >
           <Text>
               { column.label }
