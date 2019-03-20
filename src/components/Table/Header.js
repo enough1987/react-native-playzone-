@@ -29,7 +29,7 @@ export class Header extends React.Component {
     return (
         <View
           key={ key }
-          style={ { width: 70, padding: 2 } }
+          style={ { width: 80, padding: 2 } }
         >
             <Text>
                 { column.label }

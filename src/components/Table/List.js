@@ -21,7 +21,7 @@ export default class List extends React.Component {
   renderColumn = (column, key) => (
       <View
         key={ key }
-        style={ { width: 70, padding: 2 } }
+        style={ { width: 80, padding: 2 } }
       >
           <Text>
               { column }

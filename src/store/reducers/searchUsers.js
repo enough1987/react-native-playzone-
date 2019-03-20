@@ -6,7 +6,6 @@ const INITIAL_STATE = {
     { label: 'name' },
     { label: 'forks' },
     { label: 'stars' },
-    { label: 'size' },
     { label: 'desc' }
   ],
   usersList: [],
@@ -31,8 +30,9 @@ const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
             name: item.name,
             forks: item.forks,
             stars: item.stargazers_count,
-            size: item.size,
-            desc: item.description
+            desc: item.description && item.description.length > 30
+              ? `${item.description.slice(0, 30)}...`
+              : item.description
           });
           return arr;
         }, []);

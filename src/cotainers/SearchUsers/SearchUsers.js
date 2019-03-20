@@ -3,7 +3,6 @@ import { View, ActivityIndicator, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import Header from '../../components/Header/Header';
 import Table from '../../components/Table/Table';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { searchUsers } from '../../store/actions/searchUsers';
@@ -17,8 +16,7 @@ export class SearchUsers extends Component {
   render () {
     console.log('HOME PAGE ', this.props.usersList);
     return (
-        <View style={ { flex: 1 } }>
-            <Header navigation={ this.props.navigation } />
+        <View style={ { flex: 1, paddingHorizontal: 15 } }>
             <SearchBox update={ this.updateSearch } />
             {
               // eslint-disable-next-line no-nested-ternary

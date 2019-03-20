@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PureChart from 'react-native-pure-chart';
 
-import Header from '../../components/Header/Header';
 import getTrends from '../../store/actions/trends';
+import styles from './TrendsStyle';
 
 const colors = ['#56e2a3', '#c5f722', '#3f587f', '#f76e4c', '#cccc00'];
 
@@ -36,11 +36,9 @@ export class Trends extends Component {
       });
     });
 
-    console.log(data);
-
     return (
-        <View style={ { flex: 1 } }>
-            <Header navigation={ this.props.navigation } />
+        <View style={ styles.container }>
+            <Text style={ styles.title }>Trends</Text>
             <PureChart
               width="100%"
               height={ 400 }
