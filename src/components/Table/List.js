@@ -12,16 +12,16 @@ export default class List extends React.Component {
       >
           {
             Object.keys(row).map((column, index) => (
-              this.renderColumn(row[column], index)
+              this.renderColumn(row[column], index, this.props.columnsWidth[index])
             ))
           }
       </View>
   )
 
-  renderColumn = (column, key) => (
+  renderColumn = (column, key, width) => (
       <View
         key={ key }
-        style={ { width: 80, padding: 2 } }
+        style={ { width, padding: 2 } }
       >
           <Text>
               { column }
@@ -43,5 +43,6 @@ export default class List extends React.Component {
 }
 
 List.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.object).isRequired
+  items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  columnsWidth: PropTypes.arrayOf(PropTypes.number).isRequired
 };

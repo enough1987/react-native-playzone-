@@ -7,6 +7,7 @@ import Table from '../../components/Table/Table';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { searchUsers } from '../../store/actions/searchUsers';
 import searchPageActionTypes from '../../store/actions/actionTypes';
+import styles from './SearchUsersStyle';
 
 export class SearchUsers extends Component {
   updateSearch = (value) => {
@@ -16,7 +17,7 @@ export class SearchUsers extends Component {
   render () {
     console.log('HOME PAGE ', this.props.usersList);
     return (
-        <View style={ { flex: 1, paddingHorizontal: 15 } }>
+        <View style={ styles.container }>
             <SearchBox update={ this.updateSearch } />
             {
               // eslint-disable-next-line no-nested-ternary

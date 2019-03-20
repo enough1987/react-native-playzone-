@@ -5,14 +5,18 @@ import PropTypes from 'prop-types';
 import Header from './Header';
 import List from './List';
 
+const widths = [80, 65, 65, 110];
+
 export default class Table extends React.Component {
   render () {
     return (
         <ScrollView style={ { flex: 1 } }>
             <Header
+              columnsWidth={ widths }
               items={ this.props.headers }
             />
             <List
+              columnsWidth={ widths }
               items={ this.props.data }
             />
         </ScrollView>

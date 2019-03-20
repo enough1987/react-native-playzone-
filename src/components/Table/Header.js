@@ -15,7 +15,7 @@ export class Header extends React.Component {
     this.props.sortUsers(label, order);
   }
 
-  renderColumn = (column, key) => {
+  renderColumn = (column, key, width) => {
     let iconName = 'ios-arrow-up';
     let iconColor = '#ccc';
 
@@ -29,7 +29,7 @@ export class Header extends React.Component {
     return (
         <View
           key={ key }
-          style={ { width: 80, padding: 2 } }
+          style={ { width, padding: 2 } }
         >
             <Text>
                 { column.label }
@@ -60,7 +60,7 @@ export class Header extends React.Component {
             >
                 {
                   this.props.items.map((column, index) => (
-                    this.renderColumn(column, index)
+                    this.renderColumn(column, index, this.props.columnsWidth[index])
                   ))
                 }
             </View>
@@ -71,6 +71,7 @@ export class Header extends React.Component {
 
 Header.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  columnsWidth: PropTypes.arrayOf(PropTypes.number).isRequired,
   sortUsers: PropTypes.func.isRequired,
   sortedBy: PropTypes.shape({
     label: PropTypes.string.isRequired,
