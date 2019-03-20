@@ -10,5 +10,9 @@ export default {
     fontSize: 20,
     fontWeight: 'bold',
     color: '#222'
+  },
+  chartBottomHeader: {
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 };

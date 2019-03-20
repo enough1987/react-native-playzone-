@@ -16,7 +16,7 @@ export class Trends extends Component {
     props.getTrends();
   }
 
-  render () {
+  getChartData = () => {
     const data = [];
     const languages = [];
     this.props.languageTrends.forEach((trend, index) => {
@@ -34,33 +34,44 @@ export class Trends extends Component {
       });
     });
 
-    return (
-        <View style={ styles.container }>
-            <Text style={ styles.title }>Trends</Text>
-            <PureChart
-              width="100%"
-              height={ 400 }
-              data={ data }
-              type="line"
-            />
-            <Text style={ { fontWeight: 'bold', textAlign: 'center' } }>
-                {
-                  languages.map((lang, index) => (
-                      <Text
-                        // eslint-disable-next-line react/no-array-index-key
-                        key={ index }
-                        style={ { color: lang.color, textShadowColor: lang.color } }
-                      >
-                          { ' ' }
-                          { lang.label }
-                          { ' ' }
-                      </Text>
-                  ))
-                }
-            </Text>
-        </View>
-    );
+    return {
+      data,
+      languages
+    };
   }
+
+   getChartBottomHeader = languages => languages.map((lang, index) => (
+       <Text
+         // eslint-disable-next-line react/no-array-index-key
+         key={ index }
+         style={ { color: lang.color, textShadowColor: lang.color } }
+       >
+           { ' ' }
+           { lang.label }
+           { ' ' }
+       </Text>
+   ))
+
+   render () {
+     const { data, languages } = this.getChartData();
+
+     return (
+         <View style={ styles.container }>
+             <Text style={ styles.title }>Trends</Text>
+             <PureChart
+               width="100%"
+               height={ 400 }
+               data={ data }
+               type="line"
+             />
+             <Text style={ styles.chartBottomHeader }>
+                 {
+                   this.getChartBottomHeader(languages)
+                 }
+             </Text>
+         </View>
+     );
+   }
 }
 
 Trends.propTypes = {
