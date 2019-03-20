@@ -5,10 +5,13 @@ export default {
   },
   title: {
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 5,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
     color: '#222'
+  },
+  loader: {
+    paddingTop: 35
   }
 };

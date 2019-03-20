@@ -21,8 +21,13 @@ export class SearchUsers extends Component {
             <SearchBox update={ this.updateSearch } />
             {
               this.props.loading[searchPageActionTypes.SEARCH_USERS]
-                ? <ActivityIndicator size="large" color="#76cdd8" />
-                : (
+                ? (
+                    <ActivityIndicator
+                      style={ styles.loader }
+                      size="large"
+                      color="#76cdd8"
+                    />
+                ) : (
                     <Table
                       data={ this.props.usersList }
                       headers={ this.props.headersList }
