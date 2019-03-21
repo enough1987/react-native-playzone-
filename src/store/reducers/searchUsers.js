@@ -41,7 +41,7 @@ const searchUsersReducer = (state = INITIAL_STATE, action = {}) => {
           usersList
         };
       }
-      return state; // TODO: can it be not an array?
+      return state; // TODO: can it be not an array? API issue ?
     default:
       return state;
   }

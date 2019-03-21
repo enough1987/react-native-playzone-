@@ -1,8 +1,10 @@
+import colors from '../../global/colors';
+
 export default {
   header: {
     alignSelf: 'stretch',
     flexDirection: 'row',
-    backgroundColor: '#76cdd8',
+    backgroundColor: colors.lightBlue,
     padding: 5
   },
   headerItem: {

@@ -7,8 +7,8 @@ import PureChart from 'react-native-pure-chart';
 
 import getTrends from '../../store/actions/trends';
 import styles from './TrendsStyle';
-
-const colors = ['#56e2a3', '#c5f722', '#3f587f', '#f76e4c', '#cccc00'];
+import globalStyles from '../../global/globalStyle';
+import { trandsColors } from '../../global/colors';
 
 export class Trends extends Component {
   constructor (props) {
@@ -22,7 +22,7 @@ export class Trends extends Component {
     this.props.languageTrends.forEach((trend, index) => {
       languages.push({
         label: trend.language,
-        color: colors[index]
+        color: trandsColors[index]
       });
       data.push({
         seriesName: trend.language,
@@ -30,7 +30,7 @@ export class Trends extends Component {
         data: trend.results
           .map(item => ({ x: item.date, y: item.total_Count }))
           .slice(Math.max(trend.results.length - 6, 1)),
-        color: colors[index]
+        color: trandsColors[index]
       });
     });
 
@@ -56,7 +56,7 @@ export class Trends extends Component {
      const { data, languages } = this.getChartData();
 
      return (
-         <View style={ styles.container }>
+         <View style={ globalStyles.pageContainer }>
              <Text style={ styles.title }>Trends</Text>
              <PureChart
                width="100%"

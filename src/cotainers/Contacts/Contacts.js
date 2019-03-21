@@ -3,11 +3,13 @@ import { View, Text, Linking } from 'react-native';
 import PropTypes from 'prop-types'; import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 import styles from './ContactsStyle';
+import globalStyles from '../../global/globalStyle';
+import colors from '../../global/colors';
 
 export default class Contacts extends Component {
   render () {
     return (
-        <View style={ styles.contacts }>
+        <View style={ globalStyles.pageContainer }>
             <Text style={ styles.title }>Contact Us</Text>
             <View style={ styles.content }>
                 <Text style={ styles.contentTitle }>EPAM GitHub Radar Delivery Team</Text>
@@ -20,7 +22,7 @@ Shenzhen Hi-tech Industrial Park,Nanshan District,Shenzhen,Guangdong, China 5180
                 <View style={ styles.contentMap }>
                     <FontAwesome5
                       name="map-marker-alt"
-                      color="#76cdd8"
+                      color={ colors.lightBlue }
                       size={ 20 }
                     />
                     <Text
@@ -33,7 +35,7 @@ Shenzhen Hi-tech Industrial Park,Nanshan District,Shenzhen,Guangdong, China 5180
                 <View style={ styles.contentMobile }>
                     <FontAwesome5
                       name="mobile-alt"
-                      color="#76cdd8"
+                      color={ colors.lightBlue }
                       size={ 20 }
                     />
                     <Text

@@ -8,6 +8,8 @@ import SearchBox from '../../components/SearchBox/SearchBox';
 import { searchUsers } from '../../store/actions/searchUsers';
 import searchPageActionTypes from '../../store/actions/actionTypes';
 import styles from './SearchUsersStyle';
+import globalStyles from '../../global/globalStyle';
+import colors from '../../global/colors';
 
 export class SearchUsers extends Component {
   updateSearch = (value) => {
@@ -16,7 +18,7 @@ export class SearchUsers extends Component {
 
   render () {
     return (
-        <View style={ styles.container }>
+        <View style={ globalStyles.pageContainer }>
             <Text style={ styles.title }> Home </Text>
             <SearchBox update={ this.updateSearch } />
             {
@@ -25,7 +27,7 @@ export class SearchUsers extends Component {
                     <ActivityIndicator
                       style={ styles.loader }
                       size="large"
-                      color="#76cdd8"
+                      color={ colors.lightBlue }
                     />
                 ) : (
                     <Table

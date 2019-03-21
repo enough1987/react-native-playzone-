@@ -1,6 +1,5 @@
 export default {
-  about: {
+  container: {
     flex: 1
-    // paddingHorizontal: 15,
   }
 };

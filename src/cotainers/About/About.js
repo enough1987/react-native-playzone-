@@ -9,7 +9,7 @@ import styles from './AboutStyle';
 export default class About extends Component {
   render () {
     return (
-        <ScrollView style={ styles.about }>
+        <ScrollView style={ styles.container }>
             <Introduction />
             <Feature />
         </ScrollView>

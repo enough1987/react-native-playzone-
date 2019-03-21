@@ -1,6 +1,7 @@
-const colorBlue = '#76cdd8';
+import colors from '../../global/colors';
+
 export default {
-  colorBlue,
+  colorBlue: colors.lightBlue,
   feature: {
     padding: 15
   },
@@ -9,7 +10,7 @@ export default {
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#222'
+    color: colors.mainDark
   },
   item: {
     marginVertical: 10,
@@ -22,7 +23,7 @@ export default {
     width: 60,
     height: 60,
     borderWidth: 1,
-    borderColor: colorBlue,
+    borderColor: colors.lightBlue,
     borderRadius: 30
   },
   desc: {

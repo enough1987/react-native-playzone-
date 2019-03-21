@@ -1,13 +1,12 @@
+import colors from '../../global/colors';
+
 export default {
-  contacts: {
-    padding: 15
-  },
   title: {
     marginTop: 15,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#222'
+    color: colors.mainDark
   },
   content: {
     padding: 15
@@ -34,7 +33,7 @@ export default {
     marginLeft: 5,
     fontSize: 14,
     textAlign: 'center',
-    color: '#76cdd8'
+    color: colors.lightBlue
   },
   contentMobile: {
     flexDirection: 'row',
@@ -45,6 +44,6 @@ export default {
     marginLeft: 5,
     fontSize: 14,
     textAlign: 'center',
-    color: '#76cdd8'
+    color: colors.lightBlue
   }
 };

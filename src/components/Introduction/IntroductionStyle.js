@@ -1,10 +1,11 @@
+import colors from '../../global/colors';
 
 export default {
   introduction: {
     paddingHorizontal: 15,
     paddingTop: 15,
     paddingBottom: 30,
-    backgroundColor: '#76cdd8'
+    backgroundColor: colors.lightBlue
   },
   title: {
     marginVertical: 15,

@@ -13,6 +13,7 @@ import Trends from '../Trends/Trends';
 import About from '../About/About';
 import Contacts from '../Contacts/Contacts';
 import store from '../../store/store';
+import colors from '../../global/colors';
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -47,7 +48,7 @@ const TabNavigator = createBottomTabNavigator(
       }
     }),
     tabBarOptions: {
-      activeTintColor: '#76cdd8',
+      activeTintColor: colors.lightBlue,
       inactiveTintColor: '#888'
     }
   }
