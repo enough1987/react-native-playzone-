@@ -5,13 +5,6 @@ export default {
   feature: {
     padding: 15
   },
-  title: {
-    marginVertical: 15,
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: colors.mainDark
-  },
   item: {
     marginVertical: 10,
     flexDirection: 'row',

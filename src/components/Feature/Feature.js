@@ -2,12 +2,13 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import styles from './FeatureStyle';
+import globalStyles from '../../global/globalStyle';
 
 export default class Feature extends React.Component {
   render () {
     return (
         <View style={ styles.feature }>
-            <Text style={ styles.title }>Technologies</Text>
+            <Text style={ globalStyles.title }>Technologies</Text>
             <View style={ styles.item }>
                 <View style={ styles.icon }>
                     <FontAwesome5

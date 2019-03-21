@@ -10,7 +10,7 @@ export default class Contacts extends Component {
   render () {
     return (
         <View style={ globalStyles.pageContainer }>
-            <Text style={ styles.title }>Contact Us</Text>
+            <Text style={ globalStyles.title }>Contact Us</Text>
             <View style={ styles.content }>
                 <Text style={ styles.contentTitle }>EPAM GitHub Radar Delivery Team</Text>
                 <Text style={ styles.contentAdd }>

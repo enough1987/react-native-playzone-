@@ -1,13 +1,9 @@
-import colors from '../../global/colors';
+import globalStyles from '../../global/globalStyle';
 
 export default {
   title: {
-    marginTop: 15,
-    marginBottom: 5,
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: colors.mainDark
+    ...globalStyles.title,
+    marginBottom: 5
   },
   loader: {
     paddingTop: 35
