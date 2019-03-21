@@ -1,13 +1,13 @@
 # GitHubRudar
 
  # Docs :
-  - react : [react](https://reactjs.org/){:target="_blank"}.
-  - react-native : [react-native](https://facebook.github.io/react-native/){:target="_blank"}.
-  - redux : [redux](https://redux.js.org/){:target="_blank"}.
-  - chart : [chart](https://github.com/oksktank/react-native-pure-chart){:target="_blank"}.
-  - icons : [icons](https://github.com/oblador/react-native-vector-icons){:target="_blank"}.
-  - navigation : [navigation](https://facebook.github.io/react-native/docs/navigation){:target="_blank"}.
-  - elements lib : [react-native-elements](https://react-native-training.github.io/react-native-elements/docs/overview.html){:target="_blank"}.
+  - react : [react](https://reactjs.org/)
+  - react-native : [react-native](https://facebook.github.io/react-native/)
+  - redux : [redux](https://redux.js.org/)
+  - chart : [chart](https://github.com/oksktank/react-native-pure-chart)
+  - icons : [icons](https://github.com/oblador/react-native-vector-icons)
+  - navigation : [navigation](https://facebook.github.io/react-native/docs/navigation)
+  - elements lib : [react-native-elements](https://react-native-training.github.io/react-native-elements/docs/overview.html)
 
 
 # for generating new icon for ios:
