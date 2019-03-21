@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { View, Text } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PureChart from 'react-native-pure-chart';
@@ -8,7 +8,8 @@ import PureChart from 'react-native-pure-chart';
 import getTrends from '../../store/actions/trends';
 import styles from './TrendsStyle';
 import globalStyles from '../../global/globalStyle';
-import { trandsColors } from '../../global/colors';
+import colors from '../../global/colors';
+import trendsPageActionTypes from '../../store/actions/actionTypes';
 
 export class Trends extends Component {
   constructor (props) {
@@ -22,7 +23,7 @@ export class Trends extends Component {
     this.props.languageTrends.forEach((trend, index) => {
       languages.push({
         label: trend.language,
-        color: trandsColors[index]
+        color: colors.trands[index]
       });
       data.push({
         seriesName: trend.language,
@@ -30,7 +31,7 @@ export class Trends extends Component {
         data: trend.results
           .map(item => ({ x: item.date, y: item.total_Count }))
           .slice(Math.max(trend.results.length - 6, 1)),
-        color: trandsColors[index]
+        color: colors.trands[index]
       });
     });
 
@@ -58,12 +59,23 @@ export class Trends extends Component {
      return (
          <View style={ globalStyles.pageContainer }>
              <Text style={ styles.title }>Trends</Text>
-             <PureChart
-               width="100%"
-               height={ 400 }
-               data={ data }
-               type="line"
-             />
+             {
+               this.props.loading[trendsPageActionTypes.SEARCH_USERS]
+                 ? (
+                     <ActivityIndicator
+                       style={ styles.loader }
+                       size="large"
+                       color={ colors.lightBlue }
+                     />
+                 ) : (
+                     <PureChart
+                       width="100%"
+                       height={ 400 }
+                       data={ data }
+                       type="line"
+                     />
+                 )
+             }
              <Text style={ styles.chartBottomHeader }>
                  {
                    this.getChartBottomHeader(languages)
@@ -75,15 +87,19 @@ export class Trends extends Component {
 }
 
 Trends.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  loading: PropTypes.object.isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func
   }).isRequired,
   languageTrends: PropTypes.arrayOf(PropTypes.object)
     .isRequired,
   getTrends: PropTypes.func.isRequired
+
 };
 
 const mapStateToProps = state => ({
+  loading: state.common.loading,
   languageTrends: state.trends.languageTrends
 });
 
