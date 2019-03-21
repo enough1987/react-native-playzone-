@@ -3,7 +3,7 @@
  # Docs :
   - react : [react](https://reactjs.org/)
   - react-native : [react-native](hhttps://facebook.github.io/react-native/)
-  - redux : [redux](https://redux.js.org/) https://redux.js.org/
+  - redux : [redux](https://redux.js.org/) https://redux.js.org/)
   - chart : [chart](https://github.com/oksktank/react-native-pure-chart)
   - icons : [icons](https://github.com/oblador/react-native-vector-icons)
 
@@ -13,4 +13,4 @@
 - brew install imagemagick
 - yo rn-toolbox:assets --icon <path to your icon>
 ###### For instance
-- yo rn-toolbox:assets --icon ../icon.png
+- yo rn-toolbox:assets --icon ../GitHubRadar.png
