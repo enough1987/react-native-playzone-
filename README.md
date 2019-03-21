@@ -6,6 +6,8 @@
   - redux : [redux](https://redux.js.org/)
   - chart : [chart](https://github.com/oksktank/react-native-pure-chart)
   - icons : [icons](https://github.com/oblador/react-native-vector-icons)
+  - navigation : [navigation](https://facebook.github.io/react-native/docs/navigation)
+  - elements lib : [react-native-elements](https://react-native-training.github.io/react-native-elements/docs/overview.html)
 
 
 # for generating new icon for ios:
