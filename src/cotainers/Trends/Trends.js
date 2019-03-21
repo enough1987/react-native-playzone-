@@ -57,8 +57,6 @@ export class Trends extends Component {
    render () {
      const { data, languages } = this.getChartData();
 
-     console.log(' ---- ', this.props.errors);
-
      return (
          <View style={ globalStyles.pageContainer }>
              <Text style={ styles.title }>Trends</Text>
