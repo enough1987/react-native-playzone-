@@ -12,11 +12,11 @@ export default {
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#fff'
+    color: colors.mainWhite
   },
   content: {
     textAlign: 'center',
     fontSize: 14,
-    color: '#fff'
+    color: colors.mainWhite
   }
 };

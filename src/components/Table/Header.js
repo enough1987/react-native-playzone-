@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 
 import { sortUsers } from '../../store/actions/searchUsers';
 import styles from './TableStyle';
+import colors from '../../global/colors';
 
 export class Header extends React.Component {
   updateSort = (label) => {
@@ -18,10 +19,10 @@ export class Header extends React.Component {
 
   renderColumn = (column, key, width) => {
     let iconName = 'ios-arrow-up';
-    let iconColor = '#fff';
+    let iconColor = colors.mainWhite;
 
     if (this.props.sortedBy.label === column.label) {
-      iconColor = '#1a0000';
+      iconColor = colors.mainDark;
       iconName = this.props.sortedBy.order === 'asc'
         ? 'ios-arrow-down'
         : 'ios-arrow-up';

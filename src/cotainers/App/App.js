@@ -49,7 +49,7 @@ const TabNavigator = createBottomTabNavigator(
     }),
     tabBarOptions: {
       activeTintColor: colors.lightBlue,
-      inactiveTintColor: '#888'
+      inactiveTintColor: colors.lighterDark
     }
   }
 );

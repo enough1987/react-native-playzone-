@@ -3,6 +3,7 @@ import { View, ScrollView, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 import styles from './TableStyle';
+import colors from '../../global/colors';
 
 export default class List extends React.Component {
   renderRow = (row, key) => (
@@ -10,7 +11,7 @@ export default class List extends React.Component {
         key={ key }
         style={ {
           ...styles.row,
-          backgroundColor: key % 2 ? '#efefef' : '#fff'
+          backgroundColor: key % 2 ? colors.veryLightDark : colors.mainWhite
         } }
       >
           {

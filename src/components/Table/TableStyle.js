@@ -14,7 +14,7 @@ export default {
   },
   headrTitle: {
     fontSize: 16,
-    color: '#fff',
+    color: colors.mainWhite,
     marginRight: 5
   },
   row: {
@@ -34,6 +34,6 @@ export default {
     marginVertical: 35,
     textAlign: 'center',
     fontSize: 20,
-    color: '#444'
+    color: colors.lightDark
   }
 };

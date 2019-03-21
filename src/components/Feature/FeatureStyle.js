@@ -33,10 +33,10 @@ export default {
   descTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#444'
+    color: colors.lightDark
   },
   descContent: {
     fontSize: 14,
-    color: '#666'
+    color: colors.lighterDark
   }
 };

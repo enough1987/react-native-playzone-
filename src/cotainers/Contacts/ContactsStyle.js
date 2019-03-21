@@ -15,18 +15,15 @@ export default {
     marginVertical: 15,
     fontSize: 14,
     fontWeight: 'bold',
-    // textAlign: 'center',
-    color: '#c9db48'
+    color: colors.lightGreen
   },
   contentAdd: {
     fontSize: 14,
-    // textAlign: 'center',
-    color: '#444'
+    color: colors.lightDark
   },
   contentMap: {
     flexDirection: 'row',
     alignItems: 'center',
-    // justifyContent: 'center',
     paddingVertical: 15
   },
   contentMapDesc: {
@@ -38,7 +35,6 @@ export default {
   contentMobile: {
     flexDirection: 'row',
     alignItems: 'center'
-    // justifyContent: 'center',
   },
   contentMobileNumber: {
     marginLeft: 5,

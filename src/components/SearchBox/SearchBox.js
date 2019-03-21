@@ -2,6 +2,8 @@ import React from 'react';
 import { SearchBar } from 'react-native-elements';
 import PropTypes from 'prop-types';
 
+import colors from '../../global/colors';
+
 let timeout = null;
 
 export default class SearchBox extends React.Component {
@@ -36,8 +38,8 @@ export default class SearchBox extends React.Component {
         <SearchBar
           platform="ios"
           lightTheme
-          containerStyle={ { backgroundColor: '#fff' } }
-          inputContainerStyle={ { backgroundColor: '#efefef' } }
+          containerStyle={ { backgroundColor: colors.mainWhite } }
+          inputContainerStyle={ { backgroundColor: colors.veryLightDark } }
           placeholder="Type Here..."
           onChangeText={ this.updateSearch }
           onCancel={ this.onCancel }
