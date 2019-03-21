@@ -10,10 +10,11 @@ const getTrends = () => (dispatch) => {
     .then(res => res.json())
     .then((data) => {
       dispatch({ type: actionTypes.GET_TRENDS, payload: data });
+      dispatch(requestFailAction(false, actionTypes.GET_TRENDS));
       dispatch(isLoadingAction(false, actionTypes.GET_TRENDS));
       return true;
-    }).catch((error) => {
-      dispatch(requestFailAction(error, actionTypes.GET_TRENDS));
+    }).catch(() => {
+      dispatch(requestFailAction(true, actionTypes.GET_TRENDS));
       dispatch(isLoadingAction(false, actionTypes.GET_TRENDS));
     });
 };

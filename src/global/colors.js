@@ -11,5 +11,7 @@ export default {
 
   lightGreen: '#c9db48',
 
-  lightBlue: '#76cdd8'
+  lightBlue: '#76cdd8',
+
+  mainRed: '#ffb3b3'
 };

@@ -15,11 +15,12 @@ export const searchUsers = keyword => (dispatch) => {
     .then(res => res.json())
     .then((data) => {
       dispatch({ type: actionTypes.SEARCH_USERS, payload: data });
+      dispatch(requestFailAction(false, actionTypes.SEARCH_USERS));
       dispatch(isLoadingAction(false, actionTypes.SEARCH_USERS));
       return true;
     })
-    .catch((error) => {
-      dispatch(requestFailAction(error, actionTypes.SEARCH_USERS));
+    .catch(() => {
+      dispatch(requestFailAction(true, actionTypes.SEARCH_USERS));
       dispatch(isLoadingAction(false, actionTypes.SEARCH_USERS));
     });
 };

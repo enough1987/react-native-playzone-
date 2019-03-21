@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import PureChart from 'react-native-pure-chart';
 
 import getTrends from '../../store/actions/trends';
+import Loader from '../../components/Loader/Loader';
 import styles from './TrendsStyle';
 import globalStyles from '../../global/globalStyle';
 import colors from '../../global/colors';
@@ -56,26 +57,23 @@ export class Trends extends Component {
    render () {
      const { data, languages } = this.getChartData();
 
+     console.log(' ---- ', this.props.errors);
+
      return (
          <View style={ globalStyles.pageContainer }>
              <Text style={ styles.title }>Trends</Text>
-             {
-               this.props.loading[trendsPageActionTypes.SEARCH_USERS]
-                 ? (
-                     <ActivityIndicator
-                       style={ styles.loader }
-                       size="large"
-                       color={ colors.lightBlue }
-                     />
-                 ) : (
-                     <PureChart
-                       width="100%"
-                       height={ 400 }
-                       data={ data }
-                       type="line"
-                     />
-                 )
-             }
+             <Loader
+               loading={ this.props.loading[trendsPageActionTypes.GET_TRENDS] }
+               errors={ this.props.errors[trendsPageActionTypes.GET_TRENDS] }
+             >
+                 <PureChart
+                   width="100%"
+                   height={ 400 }
+                   data={ data }
+                   type="line"
+                 />
+             </Loader>
+
              <Text style={ styles.chartBottomHeader }>
                  {
                    this.getChartBottomHeader(languages)
@@ -89,6 +87,8 @@ export class Trends extends Component {
 Trends.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   loading: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  errors: PropTypes.object.isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func
   }).isRequired,
@@ -100,6 +100,7 @@ Trends.propTypes = {
 
 const mapStateToProps = state => ({
   loading: state.common.loading,
+  errors: state.common.errors,
   languageTrends: state.trends.languageTrends
 });
 
