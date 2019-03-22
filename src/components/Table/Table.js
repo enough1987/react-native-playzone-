@@ -1,26 +1,53 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Header from './Header';
 import List from './List';
 import styles from './TableStyle';
 
-const widths = [80, 65, 65, 110];
+const getWidths = () => {
+  const { width } = Dimensions.get('window');
+  return [
+    width * 0.25,
+    width * 0.20,
+    width * 0.20,
+    width * 0.34
+  ];
+};
 
 export default class Table extends React.Component {
+  state = {
+    widths: getWidths()
+  }
+
+  componentWillMount () {
+    Dimensions.addEventListener('change', this.handlerChangeWidth);
+  }
+
+  componentWillUnmount () {
+  // Important to stop updating state after unmount
+    Dimensions.removeEventListener('change', this.handlerChangeWidth);
+  }
+
+  handlerChangeWidth = () => {
+    this.setState({
+      widths: getWidths()
+    });
+  };
+
   render () {
     return (
         <View style={ { flex: 1 } }>
             <Header
-              columnsWidth={ widths }
+              columnsWidth={ this.state.widths }
               items={ this.props.headers }
             />
             {
               this.props.data.length
                 ? (
                     <List
-                      columnsWidth={ widths }
+                      columnsWidth={ this.state.widths }
                       items={ this.props.data }
                     />
                 )
