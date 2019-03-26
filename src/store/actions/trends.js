@@ -1,12 +1,13 @@
 import { isLoadingAction, requestFailAction } from './common';
 import actionTypes from './actionTypes';
 
-import { baseUrl, baseRequestOptions } from '../../global/constants';
+import { baseRequestOptions } from '../../global/constants';
+import { gitHubTrendlist } from '../../global/serverConfig';
 
 const getTrends = () => (dispatch) => {
   dispatch(isLoadingAction(true, actionTypes.GET_TRENDS));
 
-  return fetch(`${baseUrl}/api/github/trendlist`, baseRequestOptions)
+  return fetch(gitHubTrendlist, baseRequestOptions)
     .then(res => res.json())
     .then((data) => {
       dispatch({ type: actionTypes.GET_TRENDS, payload: data });

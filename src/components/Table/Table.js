@@ -26,7 +26,6 @@ export default class Table extends React.Component {
   }
 
   componentWillUnmount () {
-  // Important to stop updating state after unmount
     Dimensions.removeEventListener('change', this.handlerChangeWidth);
   }
 
